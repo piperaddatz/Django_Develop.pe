@@ -51,5 +51,5 @@ def videojuegos(request):
     return render(request,'videojuegos.html',{'posts':post})  
 
 def deportes(request):
-    post = Post.objects.filter(estado = True, categoria = Categoria.objects.get(nombre='Deporte'))
+    post = Post.objects.filter(estado = True, categoria = Categoria.objects.get(nombre__iexact='Deporte'))
     return render(request,'deportes.html',{'posts':post})   
